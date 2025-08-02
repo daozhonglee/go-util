@@ -20,6 +20,12 @@ func PanicIfWithStack(err error) {
 	}
 }
 
+func PanicIfWithStackAndMsg(err error, msg string) {
+	if err != nil {
+		panic(fmt.Sprintf("%s: %v\nstack: %v", msg, err, string(debug.Stack())))
+	}
+}
+
 // Recover 通用panic恢复函数
 func Recover() {
 	if err := recover(); err != nil {
