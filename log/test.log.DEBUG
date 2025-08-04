@@ -1,0 +1,6 @@
+[07-31 21:14:20.046] [error] [4] [log/zap_test.go:17] Error fetching URL www.5lmh.com : Error = Get "www.5lmh.com": unsupported protocol scheme ""
+[07-31 21:14:20.565] [info] [4] [log/zap_test.go:18] Success! statusCode = 200 OK for URL http://www.google.com
+[07-31 21:15:13.875] [info] [21] [testing/testing.go:1690] info
+[07-31 21:15:13.876] [warn] [21] [testing/testing.go:1690] warn
+[07-31 21:15:13.876] [error] [21] [testing/testing.go:1690] error
+[07-31 21:15:13.876] [fatal] [21] [testing/testing.go:1690] fatal

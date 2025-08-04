@@ -1,0 +1,6 @@
+[07-31 20:20:02.999] [info] [1] [go-util/test_log_fix.go:15] 这是一个Info日志
+[07-31 20:20:03.000] [info] [1] [go-util/test_log_fix.go:16] 这是一个格式化日志: 测试
+[07-31 20:20:03.000] [info] [1] [log/adapter.go:15] 适配器Print测试
+[07-31 20:20:03.000] [info] [1] [log/adapter.go:19] 适配器Println测试
+[07-31 20:20:03.000] [info] [1] [log/adapter.go:24] 适配器Printf测试: 123
+[07-31 20:20:03.000] [info] [1] [go-util/test_log_fix.go:28] [TRACEID:test-trace-123] 带TraceID的日志: 成功
