@@ -37,3 +37,27 @@ func getLogWriter() zapcore.WriteSyncer {
 	file, _ := os.Create("./test.log")
 	return zapcore.AddSync(file)
 }
+
+func TestNewProductionLogger(t *testing.T) {
+	config := zap.NewProductionConfig()
+	config.DisableStacktrace = true
+	config.DisableCaller = true
+	config.Encoding = "json"
+	config.EncoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
+	config.EncoderConfig.EncodeLevel = zapcore.CapitalLevelEncoder
+	config.EncoderConfig.EncodeCaller = zapcore.ShortCallerEncoder
+	logger, _ := config.Build(zap.AddCallerSkip(1))
+	logger.Sugar().Info("info")
+	logger.Sugar().Debug("debug")
+	logger.Sugar().Warn("warn")
+	logger.Sugar().Error("error")
+	logger.Sugar().Fatal("fatal")
+	logger.Sugar().Panic("panic")
+}
+func TestNewDevelopmentLogger(t *testing.T) {
+	logger, _ := zap.NewDevelopment()
+	logger.Sugar().Info("info")
+	logger.Sugar().Debug("debug")
+	logger.Sugar().Warn("warn")
+	logger.Sugar().Error("error")
+}
