@@ -6,7 +6,7 @@ import (
 
 func TestMarshal(t *testing.T) {
 	data := map[string]string{"key": "value"}
-	result := Marshal(data)
+	result := MarshalFailSafe(data)
 	if result == "" {
 		t.Error("Expected non-empty JSON string")
 	}
