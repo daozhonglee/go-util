@@ -6,7 +6,6 @@ import (
 	"github.com/daozhonglee/go-util/api"
 	"github.com/daozhonglee/go-util/async"
 	"github.com/daozhonglee/go-util/collection"
-	"github.com/daozhonglee/go-util/crypto"
 	"github.com/daozhonglee/go-util/delaytask"
 	"github.com/daozhonglee/go-util/errorutil"
 	"github.com/daozhonglee/go-util/id"
@@ -22,15 +21,6 @@ import (
 var (
 	ValidateChineseID = id.ValidateChinese
 	CheckAge16To18    = id.CheckAge16To18
-)
-
-// 加密相关
-var (
-	MD5Hash            = crypto.MD5Hash
-	SHA256Hash         = crypto.SHA256Hash
-	HMACSign           = crypto.HMACSign
-	NewMD5             = crypto.NewMD5
-	InvisibleEncrypter = crypto.DefaultInvisibleEncrypter
 )
 
 // JSON相关

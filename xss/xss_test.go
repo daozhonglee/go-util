@@ -3,6 +3,8 @@ package xss
 import (
 	"strings"
 	"testing"
+
+	"github.com/daozhonglee/go-util/log"
 )
 
 func TestClean(t *testing.T) {
@@ -25,5 +27,7 @@ func TestCleanEmpty(t *testing.T) {
 	result := Clean("")
 	if result != "" {
 		t.Error("Expected empty string for empty input")
+		log.Errorf("Expected empty string for empty input")
 	}
+	log.Info("Expected empty string for empty input")
 }
