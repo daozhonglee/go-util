@@ -8,6 +8,7 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
+// zap 的一些基础API 测试
 var sugarLogger *zap.SugaredLogger
 
 func TestZap(t *testing.T) {
@@ -21,7 +22,6 @@ func TestZap(t *testing.T) {
 	sugarLogger.Panic("panic")
 }
 func InitLogger() {
-
 	sugarLogger = getLogger(zapcore.DebugLevel, "./test.log")
 }
 

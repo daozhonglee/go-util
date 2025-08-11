@@ -153,6 +153,9 @@ func getEncoder() zapcore.Encoder {
 }
 
 // getWriter 创建日志文件写入器，支持文件切割和压缩
+// lumberjack这个库目前只支持按文件大小切割(按时间切割效率低且不能保证日志数据不被破坏,详情见https://github.com/natefinch/lumberjack/issues/54）
+// 想按日期切割可以使用github.com/lestrrat-go/file-rotatelogs[3]这个库(目前不维护了)
+
 // file: 日志文件路径
 func getWriter(file string) zapcore.WriteSyncer {
 	// 创建 lumberjack 日志切割器

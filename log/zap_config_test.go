@@ -8,6 +8,7 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
+// 测试zap 的 ProductionConfig 配置
 func TestZapProductionConfig(t *testing.T) {
 	config := zap.NewProductionConfig()
 	config.DisableStacktrace = true
@@ -25,6 +26,7 @@ func TestZapProductionConfig(t *testing.T) {
 	logger.Panic("panic")
 }
 
+// 测试zap 的各种配置参数，看看如何影响日志输出
 func TestConfigCustom(t *testing.T) {
 	encoderCfg := zapcore.EncoderConfig{
 		MessageKey:     "msg",
