@@ -6,23 +6,13 @@ import (
 	"os"
 )
 
-// ========================== 日志函数 ==========================
-
-// CRITICAL 记录严重错误日志但不退出程序
-// 内部调用 Panicf 但通过 recover 捕获 panic，同时记录 ERROR 级别日志
-// format: 格式化字符串
-// a: 格式化参数
 func CRITICAL(format string, a ...interface{}) {
-	// 使用 defer + recover 捕获 Panicf 产生的 panic
 	defer func() {
 		if err := recover(); err != nil {
-			// 忽略 panic，继续执行
+			datastr := fmt.Sprintf(format, a...)
+			Logger.Error(datastr)
 		}
-		// 格式化消息并记录为 ERROR 级别
-		datastr := fmt.Sprintf(format, a...)
-		Logger.Error(datastr)
 	}()
-	// 调用 Panicf（会产生 panic，但被上面的 recover 捕获）
 	Logger.Panicf(format, a...)
 }
 
