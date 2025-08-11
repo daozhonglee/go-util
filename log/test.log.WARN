@@ -1,7 +1,0 @@
-[07-31 21:14:20.046] [error] [4] [log/zap_test.go:17] Error fetching URL www.5lmh.com : Error = Get "www.5lmh.com": unsupported protocol scheme ""
-[07-31 21:15:13.876] [warn] [21] [testing/testing.go:1690] warn
-[07-31 21:15:13.876] [error] [21] [testing/testing.go:1690] error
-[07-31 21:15:13.876] [fatal] [21] [testing/testing.go:1690] fatal
-[08-08 14:21:42.868] [warn] [7] [testing/testing.go:1690] warn
-[08-08 14:21:42.868] [error] [7] [testing/testing.go:1690] error
-[08-08 14:21:42.868] [fatal] [7] [testing/testing.go:1690] fatal
